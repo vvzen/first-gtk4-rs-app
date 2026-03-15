@@ -33,14 +33,25 @@ fn build_ui(app: &Application) {
     label.set_label(&format!("Number: {}", number.get()));
 
     button_increase.connect_clicked(clone!(
-        #[weak]
+        #[strong]
         number,
         #[weak]
         label,
         move |_| {
             let n = number.get() + 1;
             number.set(n);
-            eprintln!("N: {n}");
+            label.set_label(&format!("Number: {n}"));
+        }
+    ));
+
+    button_decrease.connect_clicked(clone!(
+        #[strong]
+        number,
+        #[weak]
+        label,
+        move |_| {
+            let n = number.get() - 1;
+            number.set(n);
             label.set_label(&format!("Number: {n}"));
         }
     ));

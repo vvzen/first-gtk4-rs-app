@@ -33,6 +33,13 @@ fn build_ui(app: &Application) {
     let label = Label::builder().build();
     label.set_label(&format!("Number: {}", number.get()));
 
+    // NOTE to self: the clone!() macro seems a bit esoteric at first,
+    // but actually it makes a lot of sense since it it absolves you
+    // from needing to have a lot of duplicate variables that you'd use
+    // as RefCell or rc::WeakRef. Only after trying to implement the same
+    // behaviour without using the macro it really clicked why they went
+    // this way.
+    // docs: https://gtk-rs.org/gtk-rs-core/stable/latest/docs/glib/macro.clone.html
     button_increase.connect_clicked(clone!(
         #[strong]
         number,

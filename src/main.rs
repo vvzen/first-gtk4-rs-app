@@ -7,6 +7,7 @@ use gtk::{glib, Application, ApplicationWindow, Button, Label, Orientation};
 
 const APP_ID: &str = "org.gtk_rs.HelloWorld1";
 
+// Following along here: https://gtk-rs.org/gtk4-rs/stable/latest/book/g_object_memory_management.html
 // Widget Gallery: https://docs.gtk.org/gtk4/visual_index.html
 // Button docs: https://docs.gtk.org/gtk4/class.Button.html#implements
 

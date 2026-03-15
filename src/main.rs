@@ -2,8 +2,8 @@ use std::cell::Cell;
 use std::rc::Rc;
 
 use glib::clone;
-use gtk::{glib, Application, Button, Label, Orientation};
-use gtk::{prelude::*, ApplicationWindow};
+use gtk::prelude::*;
+use gtk::{glib, Application, ApplicationWindow, Button, Label, Orientation};
 
 const APP_ID: &str = "org.gtk_rs.HelloWorld1";
 
